@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PruebaXamarin.Views.LoginPage">
+    <ScrollView>
+        <StackLayout Padding="10" Spacing="10" BackgroundColor="#FFFDE7" >
+            <Label Text="Login App" Font="36" TextColor="#098AB2" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+            <Image x:Name="imgDisp" Source="iconfinder.png" ></Image>
+
+            <Entry  x:Name="UserEntry" Text="{Binding User.UserName, Mode=TwoWay}" FontSize="24" Placeholder="Usuario" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" ></Entry >
+            <Entry x:Name="PasswordEntry" Text="{Binding User.Password, Mode=TwoWay}" Placeholder="Contraseña" FontSize="24" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" ></Entry>
+            <Button x:Name="btnEntraUsuario" Image="info.png" FontSize="14" TextColor="White" HeightRequest="40" WidthRequest="40"  BackgroundColor="#FF0048" HorizontalOptions="End" ></Button>
+            <Label x:Name="lblMessage" Text="{Binding Message, Mode=TwoWay}" TextColor="#098AB2" Font="24" HorizontalOptions="Center" ></Label>
+
+            <Button x:Name="btnLogin" Text="Ingresar" FontSize="22" Command="{Binding LoginCommand}" HeightRequest="50" WidthRequest="150" TextColor="White" BackgroundColor="#FF0048" HorizontalOptions="CenterAndExpand" ></Button>
+            <ActivityIndicator IsRunning="{Binding IsBusy, Mode=TwoWay}" Grid.RowSpan="3" Color="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
+            
+            </StackLayout>
+      </ScrollView>
+</ContentPage>
